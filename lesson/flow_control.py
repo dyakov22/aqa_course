@@ -62,3 +62,5 @@ if True:
     )
 if False:
     pass
+
+'git remote add origin git@github.com:dyakov22/test1.git'
