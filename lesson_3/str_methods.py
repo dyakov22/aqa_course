@@ -1,3 +1,42 @@
+'''
+-format(*args, **kwargs)`  / f-string / r-string (raw string)**
+-capitalize()
+-upper()
+-lower()
+-strip()
+-lstrip(chars)
+-rstrip(chars)
+-split(sep=None)
+-join(iterable)
+-replace(old, new, count)
+-find(sub, start, end)
+-count(sub, start, end)
+-endswith(suffix, start, end)
+-startswith(prefix, start, end)
+-index(sub, start, end)
+-swapcase()
+-title()
+-isdigit()
+-islower()
+-isupper()
+-isspace()
+-isalnum()
+-isalpha()
+-istitle()
+
+-zfill(width)
+-casefold()
+-center(width[, fillchar])
+-expandtabs(tabsize=8)
+-ljust(width[, fillchar])
+-rjust(width[, fillchar])
+-partition(sep)
+-rpartition(sep)
+-splitlines([keepends])
+
+'''
+
+
 
 
 # x = 10.9321

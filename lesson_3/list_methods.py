@@ -1,17 +1,3 @@
-# list1 = [1, 2, 3, 3, 33, 1, 5, 6, 9,]
-
-# list1.append(3)
-
-# list2 = [3, 2, 1, 1]
-# list1.extend(list2)
-
-# list1.insert(2, 'new_item')
-
-# list2 = list1.copy()
-
-# print(list1)
-# print(list2)
-
 """
 - append(x) Додає елемент x`** в кінець списку.
 - extend(iterable) Розширює список, додаючи в кінець всі елементи з ітерабельного об'єкта.
@@ -25,6 +11,24 @@
 - reverse() Реверсує порядок елементів у списку на місці.
 - copy() Повертає поверхневу копію списку.
 """
+
+
+list1 = [1, 2, 3, 3, 33, 1, 5, 6, 9,]
+
+list1.append(3)
+
+list2 = [3, 2, 1, 1]
+list1.extend(list2)
+
+list1.insert(2, 'new_item')
+
+list3 = list1.copy()
+
+print(list1)
+print(list2)
+print(list3)
+
+
 
 
 # Slicing
