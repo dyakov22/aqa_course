@@ -142,6 +142,25 @@ print(my_number.isdigit())
 
 string = 'My favorite string'
 
-print(string[1:5])
-print(string[::-1])  # розвернути рядок
-print(string[-2])  # вивести другий елемент з кінця
+# print(string[1:5])
+# print(string[::-1])  # розвернути рядок
+# print(string[-2])  # вивести другий елемент з кінця
+
+
+#
+# print(string[0])
+# print(string[-1])
+# print(string[-2])
+#
+#
+# print(string[0:2])
+
+# input_word = input('please, enter word: ')
+# print(input_word[-1])
+#
+# input_word = input('please, enter word: ')
+# print(input_word[-1])
+#
+# input_word = input('please, enter word: ')
+# print(input_word[-1])
+
