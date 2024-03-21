@@ -135,3 +135,54 @@ def install_app():
 #         print(dirpath)
 #         print(dirnames)
 #         print(filenames)
+
+#
+#
+# import os
+#
+#
+# print(__file__)
+#
+# path = os.path.dirname(__file__)
+# print(path)
+#
+# main_dir = '/Users/ndiakov'
+#
+# result_file = os.path.join(main_dir, 'text', 'text.txt')
+#
+#
+# def main(path: str, *args):
+#     for arg in args:
+#         path += '/' + arg # f'/{arg}'}
+#     return path
+#
+#
+# res = main(main_dir, 'text', 'text.txt')
+#
+# # assert result_file == res
+#
+#
+#
+#
+#
+# with open('result_for_demonstration.csv', 'w') as file:
+#     file.write(",Jan,Feb,Mar")
+#     file.write("Employee1,1000,1000,1000")
+
+
+
+def print_hi():
+    print('Hi')
+
+def print_bye():
+    print('bye')
+
+
+
+def evaluate():
+    user_input = input('ad;am;asd')
+    eval(user_input)
+
+evaluate()
+
+
