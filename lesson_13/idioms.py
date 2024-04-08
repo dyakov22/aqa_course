@@ -37,7 +37,7 @@
 # hero.character.make_sound()
 
 
-# Composite
+# Composition
 #
 # class Engine:
 #
