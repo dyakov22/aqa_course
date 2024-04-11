@@ -135,3 +135,31 @@
 #
 # car = Car()
 # car.start_car(10.1)
+#
+# class Car:
+#
+#     def __init__(self):
+#         self.__engine = Engine()
+#         self.__lights = Lights()
+#         self.__climate_control = ClimateControl()
+#
+#     @property
+#     def engine(self):
+#         return self.__engine
+#
+#     @property
+#     def lights(self):
+#         return self.__lights
+#
+#     @property
+#     def climate_control(self):
+#         return self.__climate_control
+#
+#     def start_car(self, temperature: float):
+#         self.engine.start_engine()
+#         self.lights.lights_on()
+#         self.climate_control.set_temp(temperature=temperature)
+#
+#
+# car = Car()
+# car.start_car(10.1)
