@@ -105,7 +105,6 @@ class DB(metaclass=Singleton):
         print(f'Connection for {self.db_connection} was closed')
 
 
-# Usage
 db_instance = DB("username", "password")
 print(db_instance.db_connection)
 
