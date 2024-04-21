@@ -12,66 +12,40 @@
 # # 12. Path.rename(target) Перейменовує файл або каталог на новий шлях або ім'я.
 # # 13. Path.resolve(strict=False) Перетворює шлях на абсолютний шлях, розв'язуючи будь-які символічні посилання.
 # # import os
-# from pathlib import Path
-# #
-# # print(os.path.abspath('.'))
+from pathlib import Path
 #
-# import os
-#
-#
-# # os.path.dirname(__file__)
-#
-# # path = Path(__file__)
-#
-# # print('Path: ', path)
-# # print(__file__)
-#
-# # our_os_path = os.path.dirname(__file__)
-#
-# # if os.path.exists(our_os_path):
-# #     print('YES')
-#
-#
-#
-# # path = Path(__file__)
-#
-# # if path.exists():
-# #     print('YES')
-#
-#
-# # print(path.read_text())
-#
-# # 1. Open file
-# # 2.  Read file
-# # 3.  Close file
-#
-#
-# #
-# # with open(__file__, 'r') as file:
-# #     print(''.join([line for line in file.readlines()]))
-#
-#
-# # file = open('file.txt', 'w')
-# # file.name
-#
-# # os.path.join()
-#
-#
-# # path = Path(__file__)
-#
-#
-# # path_new = path.joinpath('file.txt')
-# path_new = Path(__file__ + '/file.txt')
-#
-#
-#
-#
-# # print(path_new)
-# # print(path)
-#
-#
-#
-#
-#
-#
-#
+# print(os.path.abspath('.'))
+
+import os
+
+os.path.dirname(__file__)
+
+path = Path(__file__)
+
+print('Path: ', path)
+print(__file__)
+
+our_os_path = os.path.dirname(__file__)
+
+if os.path.exists(our_os_path):
+    print('YES')
+
+path = Path(__file__)
+
+if path.exists():
+    print('YES')
+
+print(path.read_text())
+
+# 1. Open file
+# 2.  Read file
+# 3.  Close file
+
+
+
+with open(__file__, 'r') as file:
+    print(''.join([line for line in file.readlines()]))
+
+
+file = open('file.txt', 'w')
+file.name

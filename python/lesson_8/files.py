@@ -12,13 +12,11 @@ import os
 
 file_path = os.path.dirname(__file__) + '/text.txt'
 
-
 # file = open(file_path, mode='w' if not os.path.exists(file_path) else 'a')
 
 # print(file.readable())
 # print(file.writable())
 # print(file.readlines())  'r'
-
 
 
 # file.writelines(['hello', 'hello2'])
@@ -37,11 +35,6 @@ file_path = os.path.dirname(__file__) + '/text.txt'
 
 result = range(100)
 
-
 with open(name=file_path, mode='w' if not os.path.exists(file_path) else 'a') as file:
-    # for line in result:
-    #     file.write(str(line) + '\n')
     print(file.mode)
     print(file.name)
-
-

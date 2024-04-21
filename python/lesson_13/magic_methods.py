@@ -10,28 +10,26 @@
 '''
 
 
-# # class Const:
-#
-#
-# class Point:
-#
-#     def __init__(self, x, y):
-#         self.x = x
-#         self.y = y
-#
-#     def __add__(self, other):
-#         if isinstance(other, Point):
-#             return Point(self.x + other.x, self.y + other.y)
-#         elif isinstance(other, tuple) and len(other) == 2:
-#             return Point(self.x + other[0], self.y + other[1])
-#         else:
-#             raise TypeError('Uns type')
-#
-#     # def __str__(self):
-#     #     return f'Point has 2 args x and y with values {self.x} & {self.y}'
-#
-#     def __repr__(self):
-#         return f'Point(x={self.x}, y={self.y})'
+
+class Point:
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        if isinstance(other, Point):
+            return Point(self.x + other.x, self.y + other.y)
+        elif isinstance(other, tuple) and len(other) == 2:
+            return Point(self.x + other[0], self.y + other[1])
+        else:
+            raise TypeError('Uns type')
+
+    # def __str__(self):
+    #     return f'Point has 2 args x and y with values {self.x} & {self.y}'
+
+    def __repr__(self):
+        return f'Point(x={self.x}, y={self.y})'
 #
 #
 #
@@ -51,40 +49,40 @@
 #
 #
 
-#
-# class ContextManager:
-#
-#     def __init__(self, file_path: str, mode: str):
-#         self.file_path = file_path
-#         self.mode = mode
-#
-#     def __enter__(self):
-#         self.file = open(file=self.file_path, mode=self.mode)
-#         return self.file
-#
-#     def __exit__(self, exc_type, exc_val, exc_tb):
-#         if exc_val:
-#             print('Context manager executed with error')
-#         self.file.close()
-#
-#
-# path = '/Users/ndiakov/PycharmProjects/aqa_courae/lesson_13/abstact_classes.py'
-#
-# with ContextManager(file_path=path, mode='r') as file:
-#     raise FileNotFoundError('File was not found')
-#     print(file.readlines())
-#
-#
+
+class ContextManager:
+
+    def __init__(self, file_path: str, mode: str):
+        self.file_path = file_path
+        self.mode = mode
+
+    def __enter__(self):
+        self.file = open(file=self.file_path, mode=self.mode)
+        return self.file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if exc_val:
+            print('Context manager executed with error')
+        self.file.close()
 
 
-# class CallClass:
-#
-#     def __call__(self, *args, **kwargs):
-#         print('Our class was called')
-#
-#
-# call_class = CallClass()
-# call_class()
+path = '/Users/ndiakov/PycharmProjects/aqa_courae/lesson_13/abstact_classes.py'
+
+with ContextManager(file_path=path, mode='r') as file:
+    raise FileNotFoundError('File was not found')
+    print(file.readlines())
+
+
+
+
+class CallClass:
+
+    def __call__(self, *args, **kwargs):
+        print('Our class was called')
+
+
+call_class = CallClass()
+call_class()
 
 
 

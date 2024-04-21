@@ -35,20 +35,6 @@ class SettingsPage:
         return LoginPage()
 
 
-# def test_user_flow_to_settings():
-#     login_page = LoginPage()
-#     login_page.enter_email('asd@asd.asd')
-#     login_page.enter_pwd('qwe12345987654')
-#     login_page.click_on_login_btn()
-    #     home_page = HomePage()
-#     print(f"Is title good? {home_page.should_see_title('Hello, John')}")
-#     home_page.click_on_settings_btn()
-#     settings_page = SettingsPage()
-#     settings_page.click_on_sign_out()
-#     login_page = LoginPage()
-#     login_page.should_see_title('asasdmklasdm')
-
-
 def test_user_flow_to_settings():
     login_page = LoginPage()
     login_page.enter_email('asd@asd.asd')

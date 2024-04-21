@@ -33,10 +33,6 @@ class Warrior(Character):
         super().is_death()
         print('is death')
 
-    # def is_death(self):
-    #     if super().is_death():
-    #         print('No, I have surprise')
-
 
 class Elf(Character):
 

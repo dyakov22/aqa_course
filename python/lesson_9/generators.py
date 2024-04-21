@@ -59,10 +59,6 @@ def generator(start: int, stop: int, step: int = 1):
 
         value += step
 
-        yield value
-        yield value
-
-
 
 # for index in generator(0, 10):
 #     print('generator ', index)
@@ -88,23 +84,9 @@ next(countdown)
 next(countdown)
 
 
-
-
-
 generator_comp = (i * i for i in range(10))
 
-file = (line for line in open('text.txt', 'r'))
-
-
-
-
-# print(type(generator_comp))
-
-# for result in generator_comp:
-#     print(result)
-
-# for line in file:
-#     print(line)
+# file = (line for line in open('text.txt', 'r'))
 
 
 print(list(generator(0, 10)))

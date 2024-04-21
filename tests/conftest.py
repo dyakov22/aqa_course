@@ -18,7 +18,6 @@ def store_facade(request):
     del store.catalog.phones
 
 
-
 @pytest.fixture(name='store_fin')
 def store_facade_with_fin(request):
     print('Init Store Facade in fixture')
@@ -33,8 +32,6 @@ def store_facade_with_fin(request):
 
     return store
 
-
-#
 # @pytest.fixture(name='store')
 # def store_facade(request):
 #     print('Init Store Facade in fixture')
@@ -64,7 +61,6 @@ def store_facade_with_fin(request):
 #     del store.catalog.phones
 
 
-
 #
 # @pytest.fixture(name='store')
 # def store_facade():
@@ -89,8 +85,6 @@ def store_facade_with_fin(request):
 #     print('Clean up Store Facade in fixture')
 #
 #     del store.catalog.phones
-
-
 
 
 # @pytest.fixture(scope='package', autouse=True)

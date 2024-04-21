@@ -171,18 +171,5 @@ def install_app():
 
 
 
-def print_hi():
-    print('Hi')
-
-def print_bye():
-    print('bye')
-
-
-
-def evaluate():
-    user_input = input('ad;am;asd')
-    eval(user_input)
-
-evaluate()
 
 

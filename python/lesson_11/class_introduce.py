@@ -214,7 +214,7 @@ cls1 = ClassExample(100)
 cls2 = ClassExample(200)
 cls3 = ClassExample(300)
 
-cls2.class_list.append('ansdjkjnadkjasdasdad')
+cls2.class_list.append('new item')
 
 # ClassExample.class_list.append(100000)
 

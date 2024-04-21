@@ -14,36 +14,22 @@ print(iter_l)
 print(next(iter_l))
 print(next(iter_l))
 print(next(iter_l))
-# print(next(iter_l))
-# print(next(iter_l))
 
 
+class Iterator:
+
+    def __init__(self):
+        # self.db = db
+        self.current = 0
 
 
+    def __iter__(self):
+        pass
 
+    def __next__(self):
+        if len(self.db.filter()) > 10:
+            return self.current + 10
 
-
-
-
-
-
-
-
-# class Iterator:
-#
-#     def __init__(self):
-#         # self.db = db
-#         self.current = 0
-#         pass
-#
-#
-#     def __iter__(self):
-#         pass
-#
-#     def __next__(self):
-#         if len(self.db.filter()) > 10:
-#             return self.current + 10
-#
 
 
 
