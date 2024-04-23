@@ -1,6 +1,6 @@
 import pytest
 
-from src.calculator import Calculator
+from python.lesson_15_16.src.calculator import Calculator
 
 """
 CLI ARGUMENTS

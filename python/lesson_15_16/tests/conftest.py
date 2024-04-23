@@ -1,6 +1,6 @@
 import pytest
 
-from src.store.store_facade import StoreFacade
+from python.lesson_15_16.src.store.store_facade import StoreFacade
 
 
 @pytest.fixture(name='store')
