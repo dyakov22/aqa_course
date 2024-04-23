@@ -1,12 +1,12 @@
 import time
 
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
 
 
 # def test_with_webdriver_manager():
 #     pip install webdriver-manager
+#     from selenium.webdriver.chrome.service import Service as ChromeService
 #     from webdriver_manager.chrome import ChromeDriverManager
 #     service = ChromeService(ChromeDriverManager(driver_version='114.0.5735.16').install())
 #     driver = webdriver.Chrome(service=service)
