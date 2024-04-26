@@ -1,7 +1,7 @@
 #
-# from config.driver_config import DriverConfig
+# from config_parser.driver_config import DriverConfig
 #
-# from config.user_config import UserConfig
+# from config_parser.user_config import UserConfig
 #
 #
 # driver_config = DriverConfig()
@@ -9,17 +9,17 @@
 #
 # user_config = UserConfig()
 
-# from config.user_config import UserConfig
-# from config import UserConfig
+# from config_parser.user_config import UserConfig
+# from config_parser import UserConfig
 
-# from config.driver_config import driver_config
+# from config_parser.driver_config import driver_config
 #
-# config = driver_config('android')
+# config_parser = driver_config('android')
 #
-# print(config)
+# print(config_parser)
 
 
-# from config import config_d
+# from config_parser import config_d
 #
 # print(config_d)
 

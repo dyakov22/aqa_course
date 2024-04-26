@@ -104,7 +104,7 @@ def install_app():
 
 # dir_name = os.path.dirname(__file__)
 #
-# jks_file = os.path.join(dir_name, 'config.jks')
+# jks_file = os.path.join(dir_name, 'config_parser.jks')
 # aab_file = os.path.join(dir_name, 'aab.jks')
 # apk_file = os.path.join(dir_name, 'apk.jks')
 #

@@ -5,7 +5,7 @@
 
 
 
-# title = android_title if config.driver.android else ios_title
+# title = android_title if config_parser.driver.android else ios_title
 #
 # element.should_have_text(title)
 
