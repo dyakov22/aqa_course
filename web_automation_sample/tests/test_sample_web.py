@@ -3,11 +3,13 @@ from typing import Union
 
 import pytest
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-from web_automation.config_parser import config
+# from web_automation_sample.config_parser import config
+from web_automation_sample import config_pydantic as config
 
 
 # def test_with_webdriver_manager():
@@ -48,9 +50,15 @@ def test_sample_web_with_implicitly_wait(driver):
     assert signed_in_icon.is_displayed()
 
 
-def wait_until(driver, locator: Union[tuple, WebElement], condition, **kwargs):
-    wait = WebDriverWait(driver=driver, timeout=kwargs.get('timeout', 5))
-    return wait.until(condition(locator))
+def wait_until(driver: WebDriver, locator: Union[tuple, WebElement], condition, **kwargs):
+    wait = WebDriverWait(driver, kwargs.get('timeout', 10))
+    if isinstance(locator, tuple):
+        return wait.until(condition(locator))
+    elif isinstance(locator, WebElement):
+        return wait.until(lambda el: condition(locator))
+    else:
+        raise ValueError("Locator must be either a locator tuple or a WebElement")
+
 
 
 def test_sample_web_explicit_wait(driver):
@@ -85,6 +93,30 @@ def test_sample_web_explicit_wait_with_config(driver):
     pwd_input.clear()
     pwd_input.send_keys(config.get('user', 'password'))
     assert sign_in_btn.is_enabled()
+
+    wait_until(driver, sign_in_btn, lambda el: el.is_enabled() if el else False)
+
+    wait_until(driver, sign_in_btn, ec.element_to_be_clickable, timeout=15).click()
+    wait_until(driver, (By.LINK_TEXT, 'aqa_course'), ec.visibility_of_element_located)
+
+
+def test_sample_web_explicit_wait_with_pydantic_config(driver):
+    wait_until(driver, (By.ID, 'menuUserLink'), ec.element_to_be_clickable).click()
+    wait_until(driver, (By.CSS_SELECTOR, '.PopUp'), ec.visibility_of_element_located)
+    sign_in_btn = wait_until(driver, (By.ID, 'sign_in_btn'), ec.visibility_of_element_located)
+    assert not sign_in_btn.is_enabled()  # Expect False from is_enable()
+    username_input = wait_until(driver, (By.NAME, 'username'), ec.visibility_of_element_located)
+    username_input.clear()
+    username_input.send_keys(config.user.username)
+    time.sleep(3)
+    pwd_input = wait_until(driver, (By.XPATH,
+                                         "//div[@class='inputContainer ng-scope']/child::input[@type='password']"), ec.visibility_of_element_located)
+    pwd_input.clear()
+    pwd_input.send_keys(config.user.username)
+    assert sign_in_btn.is_enabled()
+
+    wait_until(driver, sign_in_btn, lambda el: el.is_enabled() if el else False)
+
     wait_until(driver, sign_in_btn, ec.element_to_be_clickable, timeout=15).click()
     wait_until(driver, (By.LINK_TEXT, 'aqa_course'), ec.visibility_of_element_located)
 
@@ -95,7 +127,7 @@ def test_sample_web_qa_demo(driver):
     assert wait_until(driver, (By.ID, 'visibleAfter'), ec.visibility_of_element_located, timeout=10).is_displayed()
 
 
-@pytest.mark.url(config.get('website', 'qa_demo_url') + "dynamic-properties")
+# @pytest.mark.url(config.get('website', 'qa_demo_url') + "dynamic-properties")
 def test_sample_web_qa_demo_with_config(driver):
     wait_until(driver, (By.ID, 'enableAfter'), ec.element_to_be_clickable, timeout=10)
     assert wait_until(driver, (By.ID, 'visibleAfter'), ec.visibility_of_element_located, timeout=10).is_displayed()
@@ -106,8 +138,6 @@ def test_sample_web_qa_demo_with_config(driver):
 @pytest.mark.implicitly_wait_value(1)
 def test_sample_web_qa_demo(driver):
     driver.find_element(By.CSS_SELECTOR, '[id="visibleAfter"]')
-
-
 
 
 

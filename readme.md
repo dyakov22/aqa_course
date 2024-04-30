@@ -25,12 +25,17 @@ Lesson 18
         - Explicit wait +
 
 Lesson 19
-- Lambda ec
+- Lambda ec +
 - pytest_generate_tests with test data from excel/csv
-- Configs
+- Configs +
     - Pydantic
 - Driver factory
 - Page object
-    - BasePage
-    - Scroll
-    - Explicit wait
+    - BasePage + 
+    - Scroll +
+    - Explicit wait +
+    - Action chains https://www.selenium.dev/documentation/webdriver/actions_api/ +
+
+Lesson 20
+- pytest_generate_tests with test data from excel/csv
+- Upload files

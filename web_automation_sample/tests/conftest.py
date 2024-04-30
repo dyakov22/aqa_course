@@ -1,4 +1,6 @@
 import pytest
+import csv
+
 from selenium import webdriver
 
 
@@ -15,3 +17,19 @@ def driver(request):
     yield driver
 
     driver.quit()
+
+
+def read():
+    with open('login_data.csv', 'r', newline='', encoding='utf-8') as f:
+        reader = csv.reader(f)
+        next(reader)
+        login_data = []
+        for row in reader:
+            login_data.append(row)
+        return login_data
+
+
+def pytest_generate_tests(metafunc):
+    if 'login_data' in metafunc.fixturenames:
+        values = read()
+        metafunc.parametrize('login_data', values)
