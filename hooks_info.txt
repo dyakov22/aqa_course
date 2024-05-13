@@ -1,0 +1,47 @@
+### **Test Collection Hooks**
+
+1. **pytest_collect_file(path, parent)**: Invoked when pytest collects a test file. You can use this hook to handle custom file types.
+2. **pytest_pycollect_makemodule(path, parent)**: This hook is called to turn Python modules into a pytest collection node.
+
+### **Test Execution Hooks**
+
+1. **pytest_runtest_protocol(item, nextitem)**: Implements the runtest protocol for the given test item, such as setup, call, and teardown.
+2. **pytest_runtest_setup(item)**: Called before the setup phase of a test item.
+3. **pytest_runtest_call(item)**: Called to execute the test item.
+4. **pytest_runtest_teardown(item, nextitem)**: Called after the test item is executed, to perform teardown.
+
+### **Fixture Hooks**
+
+1. **pytest_fixture_setup(fixturedef, request)**: Invoked before setting up a fixture.
+2. **pytest_fixture_post_finalizer(fixturedef)**: Called after a fixture’s finalizer (teardown).
+
+### **Configuration and Initialization Hooks**
+
+1. **pytest_addoption(parser)**: Called to add custom command-line options.
+2. **pytest_configure(config)**: Invoked to allow plugins and conftest files to perform initial configuration. This is also a place to register additional hooks.
+
+### **Test Reporting Hooks**
+
+1. **pytest_report_header(config)**: Called to add extra headline text to the test report.
+2. **pytest_report_teststatus(report, config)**: Called to set the test status for the test report, such as 'passed', 'failed', or 'skipped'.
+3. **pytest_terminal_summary(terminalreporter, exitstatus, config)**: Provides a hook for adding sections to the terminal summary output.
+
+### **Session and Environment Hooks**
+
+1. **pytest_sessionstart(session)**: Executed at the beginning of a test session.
+2. **pytest_sessionfinish(session, exitstatus)**: Called at the end of a test session, before returning the exit status to the operating system.
+3. **pytest_unconfigure(config)**: Called before pytest finalizes the test session.
+
+### **Modification and Customization Hooks**
+
+1. **pytest_collection_modifyitems(session, config, items)**: Called after test collection has been performed. Allows modification of the list of collected items.
+2. **pytest_itemcollected(item)**: Called when an individual test item is collected.
+
+### **Exception Handling Hooks**
+
+1. **pytest_exception_interact(node, call, report)**: Called when an exception is raised that terminates a test execution. It allows plugins to alter the traceback or handle the exception in a specific way.
+
+### **Miscellaneous Hooks**
+
+1. **pytest_ignore_collect(path, config)**: Allows plugins to decide if a certain file or directory should be ignored for collection.
+2. **pytest_itemstart(item, nodeid, captured)**: (deprecated) Was used to signal the start of running a single test item.
