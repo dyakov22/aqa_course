@@ -8,7 +8,7 @@ def test_login_with_pytest_generate_tests(login_data):
 
 
 @pytest.mark.parametrize('login_values', read())
-def test_login_with_patametrize(login_values):
+def test_login_with_parametrize(login_values):
     assert 1 == login_values
 
 

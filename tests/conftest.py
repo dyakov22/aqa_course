@@ -14,7 +14,6 @@ def driver(request, pytestconfig):
     driver = driver_factory('chrome')
 
     shared_driver.driver = driver
-
     driver.maximize_window()
     driver.get(url)
 

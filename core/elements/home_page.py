@@ -1,4 +1,5 @@
-from core.helpers import element
-
+from core.helpers.element import element
 
 elements_block = element(locator="text=Elements")
+
+

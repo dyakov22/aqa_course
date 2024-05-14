@@ -11,6 +11,9 @@ def by(locator: str) -> tuple:
     elif locator.startswith('id='):
         return By.ID, locator[3:]
 
+    elif locator.startswith('css='):
+        return By.CSS_SELECTOR, locator[4:]
+
     elif locator.startswith('text='):
         return By.XPATH, f"//*[text()='{locator[5:]}']"
 
