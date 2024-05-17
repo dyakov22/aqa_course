@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+    <book id="1">
+        <title>The Great Gatsby</title>
+        <author>F. Scott Fitzgerald</author>
+        <year>1925</year>
+        <publisher>Scribner</publisher>
+    </book>
+    <book id="2">
+        <title>1984</title>
+        <author>George Orwell</author>
+        <year>1949</year>
+        <publisher>Secker &amp; Warburg</publisher>
+    </book>
+    <book id="3">
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <year>1960</year>
+        <publisher>J.B. Lippincott &amp; Co.</publisher>
+    </book>
+   <magazine id="1">
+        <title>National Geographic</title>
+        <issue>May  2024</issue>
+    </magazine>
+    <magazine id="2">
+        <title>Time</title>
+        <issue>June 2024</issue>
+    </magazine>
+</library>

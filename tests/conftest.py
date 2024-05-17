@@ -5,6 +5,11 @@ from core.driver import shared_driver
 from core.helpers.driver_factory import driver_factory
 
 
+pytest_plugins = [
+    'tests.conftest_hooks'
+]
+
+
 @pytest.fixture(scope='function', autouse=True)
 def driver(request, pytestconfig):
     url = config.browser.base_url
