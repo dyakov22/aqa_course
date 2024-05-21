@@ -13,3 +13,8 @@ class BrowserConfig(BaseConfig):
 
     type: str
     base_url: str
+
+
+class APIConfig(BaseConfig):
+
+    url: str
