@@ -38,7 +38,7 @@ header = {
     'Accept': 'application/json'
 }
 
-# response = requests.post(url=config.api.url + "auth", headers=header, json={
+# response = requests.post(url=config.tests_api.url + "auth", headers=header, json={
 #     "username": "aqa_course_20",
 #     "password": "password123@"
 # })
@@ -50,7 +50,7 @@ header = {
 #     raise Exception
 
 
-# response = requests.get(url=config.api.url + "booking")
+# response = requests.get(url=config.tests_api.url + "booking")
 #
 # print(response.json())
 
@@ -62,7 +62,7 @@ post_json = {
     'status': 'busy'
 }
 #
-# update_pet_res = requests.post(url=config.api.url + "pet/100", data=post_json,
+# update_pet_res = requests.post(url=config.tests_api.url + "pet/100", data=post_json,
 #                                headers={"Content-Type": "application/x-www-form-urlencoded"})
 #
 # print(update_pet_res)

@@ -6,8 +6,12 @@ from core.helpers.driver_factory import driver_factory
 
 
 pytest_plugins = [
-    'tests.conftest_hooks'
+    'tests.conftest_hooks',
+    'tests_api.conftest'
 ]
+
+def pytest_html_report_title(report):
+    report.title = "My very own title!"
 
 
 @pytest.fixture(scope='function', autouse=True)
