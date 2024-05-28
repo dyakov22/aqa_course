@@ -1,8 +1,19 @@
+import allure
 from backend import schemas
 from backend.pets_interface import pet_api
 from backend.schema_validation import validate_schema
 
 
+@allure.title('Creating new pet in DB')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.link("https://www.link_to_bug_report.com/TMS-464", name="Bug report")
+@allure.issue("TMS-464")
+@allure.testcase("TMS-456")
+@allure.suite('Suite')
+@allure.parent_suite('Parent suite')
+@allure.epic("Web interface")
+@allure.feature("Essential features")
+@allure.story("Authentication")
 def test_add_new_pet(generate_random_pet_id, clean_up_pet):
     payload = {
         "id": generate_random_pet_id,
