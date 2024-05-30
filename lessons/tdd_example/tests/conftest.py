@@ -1,6 +1,6 @@
 import pytest
 
-from tdd_example.tests.helpers import read
+from lessons.tdd_example.tests.helpers import read
 
 
 @pytest.fixture(params=read())

@@ -1,6 +1,6 @@
 import pytest
 
-from tdd_example.tests.helpers import read
+from lessons.tdd_example.tests.helpers import read
 
 
 def test_login_with_pytest_generate_tests(login_data):
