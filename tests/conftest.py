@@ -22,7 +22,7 @@ def driver(request, pytestconfig):
     if request.node.get_closest_marker('route'):
         url += request.node.get_closest_marker('route').args[0]
 
-    driver = driver_factory('chrome', test_case_name=request.node.name)
+    driver = driver_factory(config.browser.type, test_case_name=request.node.name)
 
     shared_driver.driver = driver
     driver.maximize_window()
@@ -42,14 +42,7 @@ def pytest_exception_interact(node, call, report):
         print(e)
 
 
-
 @pytest.fixture(name='catcher')
 def assertion_catcher():
     return ErrCatcher()
 
-
-#
-# @pytest.fixture
-# def page(driver, request):
-#     page_name =request.node.get_closest_marker('page_name').args[0]
-#     return eval(page_name)(driver)
