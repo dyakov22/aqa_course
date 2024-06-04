@@ -7,3 +7,5 @@ sign_in_msg = element('id=signInResultMessage')
 sign_in_username_field = element('//*[@name="username"]')
 
 sign_in_password_field = element('//*[@name="password"]')
+
+sign_in_btn = element('id=sign_in_btn')

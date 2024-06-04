@@ -11,9 +11,6 @@ pytest_plugins = [
     'tests_api.conftest'
 ]
 
-def pytest_html_report_title(report):
-    report.title = "My very own title!"
-
 
 @allure.title("Prepare driver for the test")
 @pytest.fixture(scope='function', autouse=True)

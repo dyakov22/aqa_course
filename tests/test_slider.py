@@ -30,7 +30,7 @@ def test_set_slider_value_via_action_chains():
 def test_set_slider_value_via_action_chains():
     allure.dynamic.link(f'https://app.eu-central-1.saucelabs.com/tests/{shared_driver.driver.session_id}')
     slider_steps.slide_slider()
-    assert random.randint(0, 1) == 1 ,   slider_steps.slide_slider()
+    assert random.randint(0, 1) == 1,   slider_steps.slide_slider()
 
 
 @pytest.mark.route('slider')
