@@ -6,11 +6,6 @@ from core.driver import shared_driver
 from core.helpers.driver_factory import driver_factory
 from core.helpers.soft_step import ErrCatcher
 
-pytest_plugins = [
-    'tests.conftest_hooks',
-    'tests_api.conftest'
-]
-
 
 @allure.title("Prepare driver for the test")
 @pytest.fixture(scope='function', autouse=True)
