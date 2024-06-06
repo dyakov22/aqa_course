@@ -4,3 +4,4 @@ selenium==4.19.0
 pydantic-settings==2.2.1
 PyYAML==6.0.1
 allure-pytest==2.13.5
+webdriver_manager
