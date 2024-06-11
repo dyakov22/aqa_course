@@ -68,15 +68,15 @@ pipeline {
             // add env
 
             steps {
-                script {
-                    sh '''
-                    source ${WORKSPACE}/venv/bin/activate
+                catchError(buildResult: 'FAILURE', stageResult: 'FAILURE') {
+                    script {
+                        sh '''
+                        source ${WORKSPACE}/venv/bin/activate
 
-                    ${run_command}
-                    '''
-
+                        ${run_command}
+                        '''
+                    }
                 }
-
             }
             post {
                 always {
@@ -104,7 +104,7 @@ pipeline {
 
               steps {
                 script {
-                    sh 'echo ${env.PLATFORM}'
+                    sh 'echo ${PLATFORM}'
                 }
               }
         }
