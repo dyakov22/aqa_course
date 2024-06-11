@@ -3,7 +3,7 @@ def choose_platform(platform) {
     if (platform) {
         return platform
     }
-    else if (env.JOB_NAME.toString().contains('pipeline') {
+    else if (env.JOB_NAME.toString().contains('pipeline')) {
         return 'THIS IS PIPELINE'
     }
 
