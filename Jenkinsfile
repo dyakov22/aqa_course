@@ -13,7 +13,7 @@ pipeline {
 
     parameters {
         string(name: 'run_command', defaultValue: 'python3 -m pytest -k test_simple_alert', description: 'Command to run pytest suite')
-        choice(name: 'Test choice', choices: ['1', '2', '3'], description: 'Test choice parameter')
+        choice(name: 'send_report', choices: ['yes', 'no'], description: 'Test choice parameter')
     }
 
 //     triggers {
@@ -74,6 +74,18 @@ pipeline {
             }
 
         }
+
+        stage('Send report to the Slack') {
+            when {
+                expression { send_report == 'yes' }
+            }
+              steps {
+                script {
+                    sh 'echo Sending report to the Slack'
+                }
+              }
+        }
+
     }
     post {
         always {
