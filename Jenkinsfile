@@ -1,4 +1,16 @@
-// add functions to pipeline
+
+def choose_platform(platform) {
+    if (platform) {
+        return platform
+    }
+    else if (env.JOB_NAME.toString().contains('pipeline') {
+        return 'THIS IS PIPELINE'
+    }
+
+
+//     env.JOB_NAME
+}
+
 
 pipeline {
 
@@ -14,6 +26,8 @@ pipeline {
     parameters {
         string(name: 'run_command', defaultValue: 'python3 -m pytest -k test_simple_alert', description: 'Command to run pytest suite')
         choice(name: 'send_report', choices: ['yes', 'no'], description: 'Test choice parameter')
+        choice(name: 'platform', choices: ['', 'pipeline', 'freestyle'], description: 'Platform definition')
+
     }
 
 //     triggers {
@@ -21,8 +35,7 @@ pipeline {
 //     }
 
     environment {
-//         PLATFORM = 'CHROME'
-//         BROWSER_VERSION = 112
+        PLATFORM = choose_platform(params.platform)
         ENV_FILE = credentials('config_file') // -> path to config file
     }
 
@@ -52,13 +65,14 @@ pipeline {
         }
 
         stage('Run test suite') {
+            // add env
 
             steps {
                 script {
                     sh '''
                     source ${WORKSPACE}/venv/bin/activate
 
-                    ${run_command}
+                    ${params.run_command}
                     '''
 
                 }
@@ -82,6 +96,15 @@ pipeline {
               steps {
                 script {
                     sh 'echo Sending report to the Slack'
+                }
+              }
+        }
+
+        stage('Check function functionality') {
+
+              steps {
+                script {
+                    sh 'echo ${env.PLATFORM}'
                 }
               }
         }
