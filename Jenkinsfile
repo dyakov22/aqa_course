@@ -72,7 +72,7 @@ pipeline {
                     sh '''
                     source ${WORKSPACE}/venv/bin/activate
 
-                    ${params.run_command}
+                    ${run_command}
                     '''
 
                 }
