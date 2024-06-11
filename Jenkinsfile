@@ -76,9 +76,11 @@ pipeline {
         }
     }
     post {
-        script {
-            cleanWs()
-            sh 'echo WORKSPACE was deleted'
+        always {
+            script {
+                cleanWs()
+                sh 'echo WORKSPACE was deleted'
+            }
         }
     }
 }
